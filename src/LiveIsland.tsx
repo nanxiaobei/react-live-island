@@ -110,9 +110,9 @@ const LiveIsland = (props: LiveIslandProps) => {
       )}
 
       <div
-        className={`dynamic-island fixed left-1/2 top-[--top] h-[--small-height] w-[--small-width] -translate-x-1/2 select-none overflow-hidden rounded-[--small-height] bg-black text-white [box-shadow:inset_0_0_0_1.5px_rgb(255_255_255/0.15),0_1px_2px_rgb(0_0_0/0.2)] [&>*]:absolute [&>*]:inset-0 ${className} ${
+        className={`dynamic-island fixed left-1/2 top-[--top] h-[--small-height] w-[--small-width] select-none overflow-hidden rounded-[--small-height] bg-black text-white [box-shadow:inset_0_0_0_1.5px_rgb(255_255_255/0.15),0_1px_2px_rgb(0_0_0/0.2)] [transform:translate(-50%)_scale(var(--scale,1))] [&>*]:absolute [&>*]:inset-0 ${className} ${
           isSmall
-            ? `${smallClassName} cursor-pointer text-[12px] duration-300 hover:scale-105 ${
+            ? `${smallClassName} cursor-pointer text-[12px] duration-300 hover:[--scale:1.05] ${
                 initialAnimation || hasMount.current
                   ? 'animate-[turn-to-small_0.4s_ease-out_both]'
                   : ''
@@ -127,7 +127,7 @@ const LiveIsland = (props: LiveIslandProps) => {
         {children?.(isSmall)}
       </div>
 
-      <div className="dynamic-island-camera pointer-events-none fixed left-1/2 top-[calc(var(--top)+var(--small-height)*0.5)] ml-[calc(var(--small-height)*1.14)] aspect-square h-[calc(var(--small-height)*0.24)] -translate-x-1/2 -translate-y-1/2 rounded-full [background-color:#080928] [background:radial-gradient(#6667ac,transparent_50%)_33.3%_10%/75%_50%_no-repeat,radial-gradient(#454680,transparent_50%)_60%_85%/50%_50%_no-repeat] [box-shadow:inset_0_0_0.25em_#4c4da3]" />
+      <div className="dynamic-island-camera pointer-events-none fixed left-1/2 top-[calc(var(--top)+var(--small-height)*0.5)] ml-[calc(var(--small-height)*1.14)] aspect-square h-[calc(var(--small-height)*0.24)] rounded-full [background-color:#080928] [background:radial-gradient(#6667ac,transparent_50%)_33.3%_10%/75%_50%_no-repeat,radial-gradient(#454680,transparent_50%)_60%_85%/50%_50%_no-repeat] [box-shadow:inset_0_0_0.25em_#4c4da3] [transform:translate(-50%,-50%)]" />
     </div>
   );
 };
