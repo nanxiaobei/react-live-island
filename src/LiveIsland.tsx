@@ -1,11 +1,4 @@
-import {
-  CSSProperties,
-  ReactNode,
-  useEffect,
-  useMemo,
-  useRef,
-  useState,
-} from 'react';
+import { CSSProperties, ReactNode, useEffect, useRef, useState } from 'react';
 import './LiveIsland.scss';
 
 const getVal = (val: number | string) => {
@@ -14,13 +7,16 @@ const getVal = (val: number | string) => {
 
 export type LiveIslandProps = {
   className?: string;
+  style?: CSSProperties;
   top?: number | string;
 
   smallClassName?: string;
+  smallStyle?: CSSProperties;
   smallWidth?: number | string;
   smallHeight?: number | string;
 
   largeClassName?: string;
+  largeStyle?: CSSProperties;
   largeWidth?: number | string;
   largeHeight?: number | string;
   largeRadius?: number | string;
@@ -36,13 +32,16 @@ export type LiveIslandProps = {
 const LiveIsland = (props: LiveIslandProps) => {
   const {
     className = '',
+    style,
     top = 10,
 
     smallClassName = '',
+    smallStyle,
     smallWidth = 96,
     smallHeight = 30,
 
     largeClassName = '',
+    largeStyle,
     largeWidth = 400,
     largeHeight = 180,
     largeRadius = 36,
@@ -78,25 +77,16 @@ const LiveIsland = (props: LiveIslandProps) => {
 
   const isClickType = triggerType === 'click';
 
-  const triggerProps = useMemo(() => {
-    if (isClickType) {
-      return { onClick: onOpen };
-    }
-
-    return {
-      onMouseEnter: onOpen,
-      onMouseLeave: onClose,
-    };
-  }, [isClickType]);
-
   useEffect(() => {
-    const onScroll = () => onClose();
+    if (isClickType) {
+      const onScroll = () => onClose();
 
-    window.addEventListener('scroll', onScroll, true);
-    return () => {
-      window.removeEventListener('scroll', onScroll, true);
-    };
-  }, []);
+      window.addEventListener('scroll', onScroll, true);
+      return () => {
+        window.removeEventListener('scroll', onScroll, true);
+      };
+    }
+  }, [isClickType]);
 
   return (
     <div
@@ -123,13 +113,16 @@ const LiveIsland = (props: LiveIslandProps) => {
         className={`dynamic-island fixed left-1/2 top-[--top] h-[--small-height] w-[--small-width] -translate-x-1/2 select-none overflow-hidden rounded-[--small-height] bg-black text-white [box-shadow:inset_0_0_0_1.5px_rgb(255_255_255/0.15),0_1px_2px_rgb(0_0_0/0.2)] [&>*]:absolute [&>*]:inset-0 ${className} ${
           isSmall
             ? `${smallClassName} cursor-pointer text-[12px] duration-300 hover:scale-105 ${
-                initialAnimation || (!initialAnimation && hasMount.current)
+                initialAnimation || hasMount.current
                   ? 'animate-[turn-to-small_0.4s_ease-out_both]'
                   : ''
               }`
             : `${largeClassName} animate-[turn-to-large_0.4s_ease-out_both]`
         }`}
-        {...triggerProps}
+        {...(isClickType
+          ? { onClick: onOpen }
+          : { onMouseEnter: onOpen, onMouseLeave: onClose })}
+        style={{ ...style, ...(isSmall ? smallStyle : largeStyle) }}
       >
         {children?.(isSmall)}
       </div>
