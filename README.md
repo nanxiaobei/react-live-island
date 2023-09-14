@@ -41,22 +41,22 @@ const Demo = () => {
 
 ## Props
 
-| Prop             | Type                              | Default   | Description                                   |
-| ---------------- | --------------------------------- | --------- | --------------------------------------------- |
-| className        | `string`                          | `''`      | Class name of the island                      |
-| top              | `number\|string`                  | `10`      | Top egde of the island                        |
-| smallClassName   | `string`                          | `''`      | Class name of the **small** island            |
-| smallWidth       | `number\|string`                  | `96`      | Width of the **small** island                 |
-| smallHeight      | `number\|string`                  | `30`      | Height of the **small** island                |
-| largeClassName   | `string`                          | `''`      | Class name of the **large** island            |
-| largeWidth       | `number\|string`                  | `400`     | Width of the **large** island                 |
-| largeHeight      | `number\|string`                  | `180`     | Height of the **large** island                |
-| largeRadius      | `number\|string`                  | `36`      | Border radius of the **large** island         |
-| wrapperClassName | `string`                          | `''`      | Class name of the whole container             |
-| triggerType      | `'click'\|'hover'`                | `'click'` | Trigger mode for open                         |
-| initialAnimation | `boolean`                         | `false`   | Whether show animiation on enter              |
-| onChange         | `(isSmall: boolean) => void`      | -         | Call when the island open & close             |
-| children         | `(isSmall: boolean) => ReactNode` | -         | Render funtion to define the island's content |
+| Prop               | Type                              | Default   | Description                                   |
+| ------------------ | --------------------------------- | --------- | --------------------------------------------- |
+| `className`        | `string`                          | `''`      | Class name of the island                      |
+| `top`              | `number\|string`                  | `10`      | Top egde of the island                        |
+| `smallClassName`   | `string`                          | `''`      | Class name of the **small** island            |
+| `smallWidth`       | `number\|string`                  | `96`      | Width of the **small** island                 |
+| `smallHeight`      | `number\|string`                  | `30`      | Height of the **small** island                |
+| `largeClassName`   | `string`                          | `''`      | Class name of the **large** island            |
+| `largeWidth`       | `number\|string`                  | `400`     | Width of the **large** island                 |
+| `largeHeight`      | `number\|string`                  | `180`     | Height of the **large** island                |
+| `largeRadius`      | `number\|string`                  | `36`      | Border radius of the **large** island         |
+| `wrapperClassName` | `string`                          | `''`      | Class name of the whole container             |
+| `triggerType`      | `'click'\|'hover'`                | `'click'` | Trigger mode for open                         |
+| `initialAnimation` | `boolean`                         | `false`   | Whether show animiation on enter              |
+| `onChange`         | `(isSmall: boolean) => void`      | -         | Call when the island open & close             |
+| `children`         | `(isSmall: boolean) => ReactNode` | -         | Render funtion to define the island's content |
 
 ## License
 
