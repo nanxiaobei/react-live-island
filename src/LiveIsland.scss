@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes turn-to-large {
+  50% {
+    @apply h-[calc(var(--large-height)*1.02)] w-[calc(var(--large-width)*1.02)] rounded-[--large-radius] [box-shadow:inset_0_0_0_1.5px_rgb(255_255_255/0.1),0_16px_40px_rgb(0_0_0/0.7)];
+  }
+
+  100% {
+    @apply h-[--large-height] w-[--large-width] rounded-[--large-radius] [box-shadow:inset_0_0_0_1.5px_rgb(255_255_255/0.1),0_16px_40px_rgb(0_0_0/0.7)];
+  }
+}
+
+@keyframes turn-to-small {
+  0% {
+    @apply h-[--large-height] w-[--large-width] rounded-[--large-radius] [box-shadow:inset_0_0_0_1.5px_rgb(255_255_255/0.1),0_16px_40px_rgb(0_0_0/0.7)];
+  }
+
+  50% {
+    @apply h-[calc(var(--small-height)*0.94)] w-[calc(var(--small-width)*0.94)];
+  }
+}

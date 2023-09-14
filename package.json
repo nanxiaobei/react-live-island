@@ -1,0 +1,55 @@
+{
+  "name": "react-live-island",
+  "version": "0.0.1",
+  "description": "Dynamic Island for React",
+  "license": "MIT",
+  "keywords": [
+    "react",
+    "next",
+    "apple",
+    "ios",
+    "dynamic-island",
+    "live-island",
+    "react-live-island"
+  ],
+  "repository": "https://github.com/nanxiaobei/react-live-island.git",
+  "author": "nanxiaobei <nanxiaobei@gmail.com>",
+  "homepage": "https://github.com/nanxiaobei/react-live-island",
+  "bugs": "https://github.com/nanxiaobei/react-live-island/issues",
+  "main": "dist/react-live-island.cjs.js",
+  "module": "dist/react-live-island.esm.js",
+  "types": "dist/react-live-island.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "rm -rf dist && rollup -c --configPlugin @rollup/plugin-typescript"
+  },
+  "peerDependencies": {
+    "react": ">=16.8.0"
+  },
+  "devDependencies": {
+    "@rollup/plugin-typescript": "^11.1.3",
+    "@types/node": "^20.6.0",
+    "@types/react": "^18.2.21",
+    "@types/react-dom": "^18.2.7",
+    "@vitejs/plugin-react": "^4.0.4",
+    "autoprefixer": "^10.4.15",
+    "eslint": "^8.49.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-config-react-app": "^7.0.1",
+    "postcss": "^8.4.29",
+    "prettier": "^3.0.3",
+    "prettier-plugin-organize-imports": "^3.2.3",
+    "prettier-plugin-tailwindcss": "^0.5.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "rollup": "^3.29.1",
+    "rollup-plugin-dts": "^6.0.2",
+    "rollup-plugin-postcss": "^4.0.2",
+    "sass": "^1.67.0",
+    "tailwindcss": "^3.3.3",
+    "typescript": "^5.2.2",
+    "vite": "^4.4.9"
+  }
+}
