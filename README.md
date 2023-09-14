@@ -29,7 +29,7 @@ npm i react-live-island
 
 ## Usage
 
-```jsx harmony
+```jsx
 import LiveIsland from 'react-live-island';
 
 const Demo = () => {
@@ -37,7 +37,7 @@ const Demo = () => {
 };
 ```
 
-[![Edit react-live-island](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/react-live-island-4qoom5p9x4?fontsize=14&hidenavigation=1&theme=dark)
+[![Edit react-live-island](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/react-live-island-dzkl96?fontsize=14&hidenavigation=1&theme=dark)
 
 ## Props
 
