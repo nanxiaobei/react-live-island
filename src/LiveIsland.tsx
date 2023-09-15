@@ -7,16 +7,13 @@ const getVal = (val: number | string) => {
 
 export type LiveIslandProps = {
   className?: string;
-  style?: CSSProperties;
   top?: number | string;
 
   smallClassName?: string;
-  smallStyle?: CSSProperties;
   smallWidth?: number | string;
   smallHeight?: number | string;
 
   largeClassName?: string;
-  largeStyle?: CSSProperties;
   largeWidth?: number | string;
   largeHeight?: number | string;
   largeRadius?: number | string;
@@ -32,16 +29,13 @@ export type LiveIslandProps = {
 const LiveIsland = (props: LiveIslandProps) => {
   const {
     className = '',
-    style,
     top = 10,
 
     smallClassName = '',
-    smallStyle,
     smallWidth = 96,
     smallHeight = 30,
 
     largeClassName = '',
-    largeStyle,
     largeWidth = 400,
     largeHeight = 180,
     largeRadius = 36,
@@ -122,7 +116,6 @@ const LiveIsland = (props: LiveIslandProps) => {
         {...(isClickType
           ? { onClick: onOpen }
           : { onMouseEnter: onOpen, onMouseLeave: onClose })}
-        style={{ ...style, ...(isSmall ? smallStyle : largeStyle) }}
       >
         {children?.(isSmall)}
       </div>
