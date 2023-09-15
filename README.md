@@ -7,15 +7,21 @@ Create now ➫ [🔗 kee.so](https://kee.so/)
 
 ---
 
+<div align="center">
+
 # react-live-island
 
-Dynamic Island for React
+**by [🐤 kee.so](https://kee.so/)**
+
+Dynamic Island 🏝 for ⚛️ React
 
 [![npm](https://img.shields.io/npm/v/react-live-island.svg?style=flat-square)](https://www.npmjs.com/package/react-live-island)
 [![npm](https://img.shields.io/npm/dt/react-live-island?style=flat-square)](https://www.npmtrends.com/react-live-island)
 [![npm bundle size](https://img.shields.io/bundlephobia/minzip/react-live-island?style=flat-square)](https://bundlephobia.com/result?p=react-live-island)
 [![GitHub](https://img.shields.io/github/license/nanxiaobei/react-live-island?style=flat-square)](https://github.com/nanxiaobei/react-live-island/blob/main/LICENSE)
 [![npm type definitions](https://img.shields.io/npm/types/typescript?style=flat-square)](https://github.com/nanxiaobei/react-live-island/blob/main/src/types.ts)
+
+</div>
 
 ## Install
 
@@ -33,7 +39,7 @@ npm i react-live-island
 import LiveIsland from 'react-live-island';
 
 const Demo = () => {
-  return <LiveIsland>{isSmall ? 'small' : 'large'}</LiveIsland>;
+  return <LiveIsland>{(isSmall) => (isSmall ? 'small' : 'large')}</LiveIsland>;
 };
 ```
 
