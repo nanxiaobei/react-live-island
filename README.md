@@ -1,5 +1,5 @@
 <div align="center">
-<p><a href="https://kee.so/" target="_blank"><img src="https://i.imgur.com/x5SRUoo.png" alt="kee.so" /></a></p>
+<p><a href="https://kee.so/" target="_blank"><img src="https://i.imgur.com/5jkG1Ko.png" alt="kee.so" /></a></p>
 
 Create now ➫ [🔗 kee.so](https://kee.so/)
 
