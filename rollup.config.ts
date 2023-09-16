@@ -4,6 +4,7 @@ import type { RollupOptions } from 'rollup';
 import dts from 'rollup-plugin-dts';
 import postcss from 'rollup-plugin-postcss';
 import update from './rollup-plugin-update';
+
 const pkg = JSON.parse(readFileSync('./package.json') as unknown as string);
 
 const input = 'src/LiveIsland.tsx';
@@ -16,11 +17,11 @@ const plugins = (type: 'cjs' | 'esm') => [
   typescript(),
   postcss({ extract: true }),
   update((code) => {
+    const cssPos = '// css';
     const cssFile = `'./react-live-island.${type}.css'`;
-    if (type === 'cjs') {
-      return code.replace('// css', `require(${cssFile});\n`);
-    }
-    return code.replace('// css', `import ${cssFile};\n`);
+    return type === 'cjs'
+      ? code.replace(cssPos, `require(${cssFile});\n`)
+      : code.replace(cssPos, `import ${cssFile};\n`);
   }),
 ];
 
