@@ -5,5 +5,5 @@ module.exports = {
     extend: {},
   },
   plugins: [],
-  important: 'live-island-wrapper',
+  important: '.live-island-wrapper',
 };
