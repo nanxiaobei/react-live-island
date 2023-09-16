@@ -13,9 +13,9 @@
     "live-island",
     "react-live-island"
   ],
-  "repository": "https://github.com/nanxiaobei/react-live-island.git",
   "author": "nanxiaobei <nanxiaobei@gmail.com>",
   "homepage": "https://github.com/nanxiaobei/react-live-island",
+  "repository": "https://github.com/nanxiaobei/react-live-island.git",
   "bugs": "https://github.com/nanxiaobei/react-live-island/issues",
   "main": "dist/react-live-island.cjs.js",
   "module": "dist/react-live-island.esm.js",
