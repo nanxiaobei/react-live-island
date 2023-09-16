@@ -1,5 +1,6 @@
 import { CSSProperties, ReactNode, useEffect, useRef, useState } from 'react';
 import './LiveIsland.scss';
+// css
 
 const getVal = (val: number | string) => {
   return typeof val === 'number' ? `${val}px` : val;
