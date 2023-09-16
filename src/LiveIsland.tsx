@@ -48,7 +48,7 @@ const LiveIsland = (props: LiveIslandProps) => {
     children,
   } = props;
 
-  const [isHide, setIsHide] = useState(false);
+  const [isHide, setIsHide] = useState(true);
   const hasMount = useRef(false);
 
   useEffect(() => {
@@ -87,7 +87,7 @@ const LiveIsland = (props: LiveIslandProps) => {
   return (
     <div
       hidden={isHide}
-      className={`live-island-wrapper fixed z-[99999] ${wrapperClassName}`}
+      className={`live-island-wrapper fixed z-[9999] ${wrapperClassName}`}
       style={
         {
           '--top': getVal(top),
