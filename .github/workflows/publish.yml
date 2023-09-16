@@ -1,7 +1,9 @@
 on:
   push:
-    tags:
-      - '*'
+    branches:
+      - main
+    paths:
+      - 'package.json'
 
 jobs:
   publish:
