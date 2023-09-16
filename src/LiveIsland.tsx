@@ -1,8 +1,6 @@
 import { CSSProperties, ReactNode, useEffect, useRef, useState } from 'react';
 import './LiveIsland.scss';
 
-const isSSR = typeof window === 'undefined';
-
 const getVal = (val: number | string) => {
   return typeof val === 'number' ? `${val}px` : val;
 };
@@ -50,19 +48,15 @@ const LiveIsland = (props: LiveIslandProps) => {
     children,
   } = props;
 
-  const [isHide, setIsHide] = useState(isSSR);
-  const [isSmall, setIsSmall] = useState(true);
-
+  const [isHide, setIsHide] = useState(false);
   const hasMount = useRef(false);
+
   useEffect(() => {
-    if (isSSR) {
-      setIsHide(false);
-      setTimeout(() => (hasMount.current = true), 10);
-    } else {
-      hasMount.current = true;
-    }
+    setIsHide(false);
+    setTimeout(() => (hasMount.current = true), 10);
   }, []);
 
+  const [isSmall, setIsSmall] = useState(true);
   const onChangeRef = useRef(onChange);
   onChangeRef.current = onChange;
 
@@ -90,12 +84,9 @@ const LiveIsland = (props: LiveIslandProps) => {
     }
   }, [isClickType]);
 
-  if (isHide) {
-    return null;
-  }
-
   return (
     <div
+      hidden={isHide}
       className={`live-island-wrapper fixed z-[99999] ${wrapperClassName}`}
       style={
         {
