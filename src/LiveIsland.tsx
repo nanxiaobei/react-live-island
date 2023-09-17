@@ -107,7 +107,7 @@ const LiveIsland = (props: LiveIslandProps) => {
       )}
 
       <div
-        className={`live-island fixed left-1/2 top-[--top] h-[--small-height] w-[--small-width] select-none overflow-hidden rounded-[--small-height] bg-black text-white [box-shadow:inset_0_0_0_1.5px_rgb(255_255_255/0.15),0_1px_2px_rgb(0_0_0/0.2)] [transform:translate(-50%)_scale(var(--scale,1))] [&>*]:absolute [&>*]:inset-0 ${className} ${
+        className={`live-island fixed left-1/2 top-[--top] h-[--small-height] w-[--small-width] select-none overflow-hidden rounded-[--small-height] bg-black text-white [box-shadow:inset_0_0_0_1.5px_rgb(255_255_255/0.15),0_1px_2px_rgb(0_0_0/0.2)] [transform:translate(-50%)_scale(var(--scale,1))] ${className} ${
           isSmall
             ? `${smallClassName} cursor-pointer duration-300 hover:[--scale:1.05] ${
                 initialAnimation || hasMount.current
