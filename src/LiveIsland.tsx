@@ -87,7 +87,7 @@ const LiveIsland = (props: LiveIslandProps) => {
   return (
     <div
       hidden={isHide}
-      className={`live-island-wrapper fixed z-[9999] ${wrapperClassName}`}
+      className={`live-island-wrapper fixed inset-x-0 top-[--top] z-[9999] ${wrapperClassName}`}
       style={
         {
           '--top': getVal(top),
@@ -107,7 +107,7 @@ const LiveIsland = (props: LiveIslandProps) => {
       )}
 
       <div
-        className={`live-island fixed left-1/2 top-[--top] h-[--small-height] w-[--small-width] overflow-hidden rounded-[--small-height] bg-black text-white [box-shadow:inset_0_0_0_1.5px_rgb(255_255_255/0.15),0_1px_2px_rgb(0_0_0/0.2)] [transform:translate(-50%)_scale(var(--scale,1))] [&>*]:duration-200 ${className} ${
+        className={`live-island absolute left-1/2 top-0 h-[--small-height] w-[--small-width] overflow-hidden rounded-[--small-height] bg-black text-white [box-shadow:inset_0_0_0_1.5px_rgb(255_255_255/0.15),0_1px_2px_rgb(0_0_0/0.2)] [transform:translate(-50%)_scale(var(--scale,1))] [&>*]:duration-200 ${className} ${
           isSmall
             ? `${smallClassName} cursor-pointer select-none duration-300 hover:[--scale:1.05] ${
                 initialAnimation || hasMount.current
@@ -123,7 +123,7 @@ const LiveIsland = (props: LiveIslandProps) => {
         {children?.(isSmall)}
       </div>
 
-      <div className="live-island-camera pointer-events-none fixed left-1/2 top-[calc(var(--top)+var(--small-height)*0.5)] ml-[calc(var(--small-height)*1.14)] aspect-square h-[calc(var(--small-height)*0.24)] rounded-full [background-color:#080928] [background:radial-gradient(#6667ac,transparent_50%)_33.3%_10%/75%_50%_no-repeat,radial-gradient(#454680,transparent_50%)_60%_85%/50%_50%_no-repeat] [box-shadow:inset_0_0_0.25em_#4c4da3] [transform:translate(-50%,-50%)]" />
+      <div className="live-island-camera pointer-events-none absolute left-1/2 top-[calc(var(--small-height)*0.5)] ml-[calc(var(--small-height)*1.14)] aspect-square h-[calc(var(--small-height)*0.24)] rounded-full [background-color:#080928] [background:radial-gradient(#6667ac,transparent_50%)_33.3%_10%/75%_50%_no-repeat,radial-gradient(#454680,transparent_50%)_60%_85%/50%_50%_no-repeat] [box-shadow:inset_0_0_0.25em_#4c4da3] [transform:translate(-50%,-50%)]" />
     </div>
   );
 };
